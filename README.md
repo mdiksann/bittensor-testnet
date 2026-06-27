@@ -30,10 +30,16 @@ source ~/bittensor-env/bin/activate  # Update with the path to your actual venv 
 pip install -e . --no-deps
 ```
 
-### Step 4: Execute the script
-Run the bash script to start mining:
+### Step 4: Register your wallet on the subnet
+Before mining, you must register your hotkey to the subnet on the test network:
 ```bash
-bash run_miner.sh
+btcli subnets register --netuid 1 --wallet.name mywallet --wallet.hotkey miner1 --subtensor.network test
+```
+
+### Step 5: Execute the script
+Run the bash script to start mining, passing your wallet and hotkey names as arguments:
+```bash
+bash run_miner.sh mywallet miner1
 ```
 
 ### What happens next?
